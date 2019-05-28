@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table">
+<thead>
+<th>No</th>
+<th>Title</th>
+<th>Year</th>
+<th>Author</th>
+<th>ISBN</th>
+<th>Publisher</th>
+<th>Tag</th>
+</thead>
+
+<tbody>
+ <tr *ngFor="let book of books;let i = index" >
+<td >{{i+1}}</td>
+<td >{{book.title | titlecase}}</td>
+<td >{{book.year}}</td>
+<td >{{book.author | titlecase}}</td>
+<td >{{book.isbn}}</td>
+<td >{{book.publisher | titlecase}}</td>
+<td >{{book.tag | titlecase}}</td>
+</tr>
+ <tbody>
+</table>
+</div>

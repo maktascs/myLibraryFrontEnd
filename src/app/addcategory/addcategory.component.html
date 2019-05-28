@@ -1,0 +1,11 @@
+<div class="container">
+<form #categoryform = "ngForm" (ngSubmit) = "formSubmit(categoryform.value)" >
+  <div class="form-group">
+    <label for="catname">Enter New Category Name</label>
+    <input type="text" class="form-control" id="catname" placeholder="Category Name" name="catname" required ngModel>
+  </div>
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
