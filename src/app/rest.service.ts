@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {map, catchError, tap} from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {map, catchError, tap} from 'rxjs/operators';
 export class RestService {
   baseUrl:String='http://localhost:8080/';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
     const endpoint = 'http://localhost:8080/';
     const httpOptions = {headers : new HttpHeaders({
       'Content-Type':'application/json'
@@ -46,10 +47,8 @@ console.log(res);
     return this.http.get('http://localhost:8080/users').pipe(map(this.extractData));
   }
 
-  public addUser(user:[]){
-    return this.http.post('http://localhost:8080/users',user).subscribe(res =>{
-      console.log(res);
-    })
+  public addUser(user){
+    return this.http.post('http://localhost:8080/users',user);
   }
 
   public getAllStudents():Observable<any>{
@@ -63,4 +62,11 @@ console.log(res);
     return this.http.get(this.baseUrl+"users/Teacher").pipe(map(this.extractData));
   }
 
+  public updateUser(user,id){
+    return this.http.put(this.baseUrl+'users/'+id,user);
+  }
+
+  public getUserById(id):Observable<any>{
+    return this.http.get(this.baseUrl+'users/byid/'+id).pipe(map(this.extractData));
+  }
 }

@@ -16,7 +16,7 @@ export class ViewstudentsComponent implements OnInit {
   getAllStudents(){
     this.students = [];
     return this.rest.getAllStudents().subscribe((data:{}) =>{
-      console.log(data);
+      //console.log(data);
       this.students=data;
     })
   }

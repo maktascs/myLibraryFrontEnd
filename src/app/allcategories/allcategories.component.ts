@@ -16,7 +16,7 @@ export class AllcategoriesComponent implements OnInit {
   getAllCategories(){
     this.cats = [];
     return this.rest.getAllCategories().subscribe((data:{})=>{
-      console.log(data);
+      //console.log(data);
       this.cats = data;
     })
   }

@@ -16,7 +16,7 @@ export class ViewadminsComponent implements OnInit {
 getAllAdmins(){
   this.admins=[];
   return this.rest.getAllAdmins().subscribe((data:{})=>{
-    console.log(data);
+    //console.log(data);
     this.admins=data;
   })
 }

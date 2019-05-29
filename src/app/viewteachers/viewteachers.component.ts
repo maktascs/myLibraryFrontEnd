@@ -17,7 +17,7 @@ export class ViewteachersComponent implements OnInit {
   getAllTeachers(){
     this.teachers=[];
     return this.rest.getAllTeachers().subscribe((data:{}) => {
-      console.log(data);
+      //console.log(data);
       this.teachers = data;
     })
   }

@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:"view-admins",component:ViewadminsComponent},
   {path:"adduser",component:AddUserComponent},
   {path:"delete-user",component:DeleteuserComponent},
-  {path:"update-user", component:UpdateuserComponent}
+  {path:"update-user/:id", component:UpdateuserComponent}
 ];
 
 @NgModule({

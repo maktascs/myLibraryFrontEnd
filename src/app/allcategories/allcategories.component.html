@@ -1,7 +1,8 @@
 <div class="container"> 
 
-<ul *ngFor ="let cat of cats">
+<ul *ngFor ="let cat of cats" >
 <li>{{cat.name | titlecase}}</li>
 </ul>
 
+<div class="well" *ngIf="cats?.length == 0"><h4>Looks like there are no categories.</h4></div>
 </div>

@@ -16,7 +16,7 @@ books:any = [];
   public getAllBooks(){
     this.books = [];
     return this.rest.getAllBooks().subscribe((data:{} ) =>{
-      console.log(data);
+      //console.log(data);
       this.books = data;
     });
   }
