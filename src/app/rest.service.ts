@@ -7,6 +7,7 @@ import {map, catchError, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RestService {
+  baseUrl:String='http://localhost:8080/';
 
   constructor(private http: HttpClient) {
     const endpoint = 'http://localhost:8080/';
@@ -40,6 +41,26 @@ console.log(res);
 
   public getAllCategories():Observable<any>{
   return this.http.get('http://localhost:8080/categories').pipe(map(this.extractData));
+  }
+  public getAllUsers():Observable<any>{
+    return this.http.get('http://localhost:8080/users').pipe(map(this.extractData));
+  }
+
+  public addUser(user:[]){
+    return this.http.post('http://localhost:8080/users',user).subscribe(res =>{
+      console.log(res);
+    })
+  }
+
+  public getAllStudents():Observable<any>{
+  return this.http.get(this.baseUrl+'users/Student').pipe(map(this.extractData));
+  }
+  public getAllAdmins():Observable<any>{
+    return this.http.get(this.baseUrl+"users/Admin").pipe(map(this.extractData));
+  }
+
+  public getAllTeachers():Observable<any>{
+    return this.http.get(this.baseUrl+"users/Teacher").pipe(map(this.extractData));
   }
 
 }

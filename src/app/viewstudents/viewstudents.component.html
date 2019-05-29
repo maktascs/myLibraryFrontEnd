@@ -1,0 +1,27 @@
+<div class="container">
+<table class="table" *ngIf="students?.length > 0">
+<thead>
+<th>No</th>
+<th>Email</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>ID Number</th>
+<th>Gender</th>
+<th>Grade</th>
+</thead>
+
+<tbody>
+ <tr *ngFor="let student of students;let i = index" >
+<td >{{i+1}}</td>
+<td >{{student.email | titlecase}}</td>
+<td >{{student.firstname |titlecase}}</td>
+<td >{{student.lastname | titlecase}}</td>
+<td >{{student.idnumber}}</td>
+<td >{{student.gender | titlecase}}</td>
+<td >{{student.grade}}</td>
+</tr>
+ <tbody>
+</table>
+
+<div *ngIf="students?.length == 0"><h4>Looks like there are no students.</h4></div>
+</div>

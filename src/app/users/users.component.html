@@ -1,0 +1,35 @@
+<div class="container">
+<table class="table" *ngIf="users?.length > 0">
+<thead>
+<th>No</th>
+<th>Email</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>ID Number</th>
+<th>Type</th>
+<th>Gender</th>
+<th>Grade</th>
+<th>Action</th>
+</thead>
+
+<tbody>
+ <tr *ngFor="let user of users;let i = index" >
+<td >{{i+1}}</td>
+<td >{{user.email | titlecase}}</td>
+<td >{{user.firstname |titlecase}}</td>
+<td >{{user.lastname | titlecase}}</td>
+<td >{{user.idnumber}}</td>
+<td ><a routerLink="/view-{{user.type | lowercase}}s">{{user.type | titlecase}}</a></td>
+<td >{{user.gender | titlecase}}</td>
+<td >{{user.grade}}</td>
+<td>
+<a class="btn btn-success" routerLink="/update-user"><i class="fa fa-edit"></i></a><div style="display:inline-block;margin-right:5px"></div>
+<a class="btn btn-danger" routerLink="/delete-user"><i class="fa fa-trash"></i></a>
+
+</td>
+</tr>
+ <tbody>
+</table>
+
+<div *ngIf="users?.length == 0"><h4>Looks like there are no users.</h4></div>
+</div>

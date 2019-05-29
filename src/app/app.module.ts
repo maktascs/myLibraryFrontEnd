@@ -11,6 +11,13 @@ import { AllbooksComponent } from './allbooks/allbooks.component';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { FormsModule }   from '@angular/forms';
 import { AllcategoriesComponent } from './allcategories/allcategories.component';
+import { UsersComponent } from './users/users.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
+import { ViewstudentsComponent } from './viewstudents/viewstudents.component';
+import { ViewteachersComponent } from './viewteachers/viewteachers.component';
+import { ViewadminsComponent } from './viewadmins/viewadmins.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 
 
@@ -21,7 +28,14 @@ import { AllcategoriesComponent } from './allcategories/allcategories.component'
     HeaderComponent,
     AllbooksComponent,
     AddcategoryComponent,
-    AllcategoriesComponent
+    AllcategoriesComponent,
+    UsersComponent,
+    AddUserComponent,
+    DeleteuserComponent,
+    ViewstudentsComponent,
+    ViewteachersComponent,
+    ViewadminsComponent,
+    UpdateuserComponent
   ],
   imports: [
     BrowserModule,
